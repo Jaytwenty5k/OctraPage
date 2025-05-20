@@ -40,3 +40,45 @@ section {
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.social-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: inline-block;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #222;
+    box-shadow: 0 0 10px #bb00ff50;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid #bb00ff;
+}
+
+.social-btn:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 20px #bb00ffaa;
+}
+
+/* Icons als Hintergrundbilder */
+.social-btn.reddit {
+    background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/reddit.svg');
+}
+.social-btn.tiktok {
+    background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg');
+}
+.social-btn.instagram {
+    background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg');
+}
+.social-btn.youtube {
+    background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg');
+}
+.social-btn.snapchat {
+    background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/snapchat.svg');
+}
