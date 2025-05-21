@@ -1,66 +1,99 @@
-
-<!DOCTYPE html><html lang="de">
+<!DOCTYPE html>
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Octra | Start</title>
-  <link rel="stylesheet" href="src/styles/main.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Octra Projekte</title>
+  <link rel="stylesheet" href="src/styles/styles.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="#">Start</a></li>
-      <li><a href="#">Projekte</a></li>
-      <li><a href="#">Releases</a></li>
-      <li><a href="#">Informationen</a></li>
-      <li><a href="#">Stats</a></li>
-      <li><a href="#">Server</a></li>
-      <li><a href="#">Wiki</a></li>
-      <li><a href="#">Weitere</a></li>
-    </ul>
-  </nav>  <header class="hero">
-    <h1>Willkommen bei <span class="highlight">Octra</span></h1>
-    <p>Die Zukunft der Bots. Schnell. Modular. Lila.</p>
-  </header>  <main>
-    <section>
-      <h2>Unsere Plattformen</h2>
-      <div class="social-buttons">
-        <a class="social-btn reddit" href="https://reddit.com" target="_blank" aria-label="Reddit"></a>
-        <a class="social-btn tiktok" href="https://tiktok.com" target="_blank" aria-label="TikTok"></a>
-        <a class="social-btn instagram" href="https://instagram.com" target="_blank" aria-label="Instagram"></a>
-        <a class="social-btn youtube" href="https://youtube.com" target="_blank" aria-label="YouTube"></a>
-        <a class="social-btn snapchat" href="https://snapchat.com" target="_blank" aria-label="Snapchat"></a>
-      </div>
-    </section><section class="features">
-  <h2>Funktionen</h2>
-  <ul>
-    <li>Reaktives Design für alle Geräte</li>
-    <li>Cookie-Zustimmung mit Speicherung</li>
-    <li>Futuristisches Neon-Styling</li>
-    <li>Automatische Erkennung von Darkmode (in Vorbereitung)</li>
-    <li>Animierte UI-Elemente mit sanften Übergängen</li>
-  </ul>
-</section>
+  <!-- Cookie Banner -->
+  <div id="cookie-banner" class="cookie-banner">
+    <p>Diese Website verwendet Cookies. Durch die Nutzung akzeptierst du unsere Datenschutzrichtlinien.</p>
+    <button onclick="acceptCookies()">Okay</button>
+  </div>
 
-  </main>  <footer>
-    <p>&copy; 2025 Octra – Alle Rechte vorbehalten</p>
-  </footer>  <div id="cookie-banner">
-    <p>Diese Website verwendet Cookies, um dir das beste Erlebnis zu bieten.</p>
-    <button id="accept-cookies">Akzeptieren</button>
-  </div>  <script>
-    const banner = document.getElementById("cookie-banner");
-    const button = document.getElementById("accept-cookies");
+  <!-- Header -->
+  <header>
+    <h1>Octra Projekte</h1>
+  </header>
 
-    if (localStorage.getItem("cookiesAccepted") === "true") {
-      banner.style.display = "none";
+  <!-- Desktop Navigation -->
+  <nav class="main-nav">
+    <a href="#projekte">Projekte</a>
+    <a href="#releases">Releases</a>
+    <a href="#infos">Informationen</a>
+    <a href="#stats">Stats</a>
+    <a href="#server">Server</a>
+    <a href="#impressum">Impressum</a>
+    <a href="#credits">Credits</a>
+    <a href="#wiki">Wiki</a>
+    <a href="#mehr">Weitere</a>
+  </nav>
+
+  <!-- Mobile Toggle Button -->
+  <button class="sidebar-toggle" aria-label="Features anzeigen">Features</button>
+
+  <!-- Mobile Sidebar -->
+  <aside class="feature-sidebar" id="mobileSidebar">
+      <section><div class="feature-card"></class><h2>Projekte</h2><p>Alle Projekte im Überblick.</p></section>
+      <section><div class="feature-card"></class><h2>Releases</h2><p>Neuste Veröffentlichungen.</p></section>
+      <section><div class="feature-card"></class><h2>Informationen</h2><p>Wissenswertes zu Octra.</p></section>
+      <section><div class="feature-card"></class><h2>Stats</h2><p>Echtzeit-Daten & Analysen.</p></section>
+      <section><div class="feature-card"></class><h2>Server</h2><p>Plattformen & Bots.</p></section>
+      <section><div class="feature-card"></class><h2>Impressum</h2><p>Rechtliche Angaben.</p></section>
+      <section><div class="feature-card"></class><h2>Credits</h2><p>Mitwirkende & Partner.</p></section>
+      <section><div class="feature-card"></class><h2>Wiki</h2><p>Alles über Octra-Funktionen.</p></section>
+      <section><div class="feature-card"></class><h2>Weitere</h2><p>Bonusinhalte und Tools.</p></section>
+    </div>
+  </aside>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Octra. Alle Rechte vorbehalten.</p>
+    <div class="social-buttons">
+      <a class="reddit" href="#" title="Reddit"><i class="fab fa-reddit"></i></a>
+      <a class="tiktok" href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+      <a class="instagram" href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a class="youtube" href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+  </footer>
+
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav">
+    <a href="#projekte"><i class="fas fa-folder"></i></a>
+    <a href="#infos"><i class="fas fa-info-circle"></i></a>
+    <a href="#stats"><i class="fas fa-chart-line"></i></a>
+    <a href="#wiki"><i class="fas fa-book"></i></a>
+    <a href="#mehr"><i class="fas fa-ellipsis-h"></i></a>
+  </nav>
+
+  <!-- Cookie Script -->
+  <script>
+    function acceptCookies() {
+      localStorage.setItem("cookiesAccepted", "true");
+      document.getElementById("cookie-banner").style.display = "none";
     }
 
-    button.addEventListener("click", () => {
-      localStorage.setItem("cookiesAccepted", "true");
-      banner.style.display = "none";
+    if (!localStorage.getItem("cookiesAccepted")) {
+      document.getElementById("cookie-banner").style.display = "flex";
+    }
+  </script>
+  <script>
+    const toggleButton = document.querySelector('.sidebar-toggle');
+    const sidebar = document.getElementById('mobileSidebar');
+
+    toggleButton.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
     });
-  </script></body>
+
+    document.addEventListener('click', (event) => {
+      if (!sidebar.contains(event.target) && !toggleButton.contains(event.target)) {
+        sidebar.classList.remove('open');
+      }
+    });
+  </script>
+</body>
 </html>

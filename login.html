@@ -1,0 +1,30 @@
+<!-- login.html -->
+<form id="login-form">
+  <input type="email" id="email" placeholder="E-Mail" required />
+  <input type="password" id="password" placeholder="Passwort" required />
+  <button type="submit">Anmelden</button>
+</form>
+<div id="message"></div>
+
+<script type="module">
+  import { supabase } from './supabaseClient.js'
+  
+  const form = document.getElementById('login-form')
+  const message = document.getElementById('message')
+  
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault()
+    const email = form.email.value
+    const password = form.password.value
+    
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password })
+    
+    if (error) {
+      message.textContent = 'Fehler: ' + error.message
+    } else {
+      message.textContent = 'Erfolgreich angemeldet!'
+      // Weiterleitung oder UI anpassen
+      window.location.href = '/dashboard.html'
+    }
+  })
+</script>
