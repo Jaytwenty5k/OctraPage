@@ -1,84 +1,148 @@
+/* Farben */
+:root {
+  --lila: #bb00ff;
+  --dunkel: #111;
+  --hell: #fff;
+  --bg: #0c0c0c;
+  --text: #eee;
+  --hover: #7a00c2;
+}
+
 /* Basisstile */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 /* Navigation */
+nav {
+  background-color: var(--dunkel);
+  box-shadow: 0 4px 10px #00000066;
+}
 nav ul {
-    list-style: none;
-    padding: 0;
-    background-color: #333;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
 }
-
 nav ul li {
-    margin: 0;
+  margin: 0;
 }
-
 nav ul li a {
-    color: #fff;
-    padding: 15px 20px;
-    display: block;
-    text-decoration: none;
-    transition: background 0.3s;
+  color: var(--text);
+  padding: 15px 20px;
+  display: block;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+nav ul li a:hover {
+  background-color: var(--hover);
+  color: var(--hell);
 }
 
-nav ul li a:hover {
-    background-color: #555;
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: radial-gradient(ellipse at center, #200030, #0c0c0c);
+}
+.hero .highlight {
+  color: var(--lila);
+}
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.85;
 }
 
 /* Sektionen */
 section {
-    padding: 50px;
-    margin: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  padding: 60px 20px;
+  margin: 40px auto;
+  max-width: 1000px;
+  background-color: #1a1a1a;
+  border: 1px solid var(--lila);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px #bb00ff33;
 }
+section h2 {
+  text-align: center;
+  color: var(--lila);
+  margin-bottom: 20px;
+}
+
+/* Social Buttons */
 .social-buttons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
 }
-
 .social-btn {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: inline-block;
-    background-size: 70%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: #222;
-    box-shadow: 0 0 10px #bb00ff50;
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: 2px solid #bb00ff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--dunkel);
+  box-shadow: 0 0 12px var(--lila);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 2px solid var(--lila);
 }
-
 .social-btn:hover {
-    transform: scale(1.15);
-    box-shadow: 0 0 20px #bb00ffaa;
+  transform: scale(1.15);
+  box-shadow: 0 0 20px var(--lila);
 }
-
-/* Icons als Hintergrundbilder */
 .social-btn.reddit {
-    background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/reddit.svg');
+  background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/reddit.svg');
 }
 .social-btn.tiktok {
-    background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg');
+  background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg');
 }
 .social-btn.instagram {
-    background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg');
+  background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg');
 }
 .social-btn.youtube {
-    background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg');
+  background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg');
 }
 .social-btn.snapchat {
-    background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/snapchat.svg');
+  background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/snapchat.svg');
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+/* Cookie Banner */
+#cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #1a1a1a;
+  color: #eee;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 -2px 10px #00000099;
+}
+#cookie-banner button {
+  background: var(--lila);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#cookie-banner button:hover {
+  background: var(--hover);
 }

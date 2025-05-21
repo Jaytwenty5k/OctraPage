@@ -1,215 +1,66 @@
-<!DOCTYPE html>
-<html lang="de">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Octra</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollreveal/4.0.9/scrollreveal.min.js"></script>
-    <style>
-    .social-follow {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin: 40px auto;
-}
 
-.follow-btn {
-  display: inline-block;
-  padding: 12px 20px;
-  border-radius: 12px;
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 14px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-.follow-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-}
-
-/* Plattform-Farben */
-.snapchat  { background-color: #FFFC00; color: #000; }
-.instagram { background-color: #E1306C; }
-.tiktok    { background-color: #010101; }
-.youtube   { background-color: #FF0000; }
-.reddit    { background-color: #FF4500; }
-
-    .social-btn {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: inline-block;
-    background-size: 60%;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: #fff;
-    box-shadow: 0 0 15px rgba(187, 0, 255, 0.4);
-}
-.social-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 25px rgba(187, 0, 255, 0.8);
-}
-
-/* Plattform-Logos */
-.snapchat  { background-image: url('https://upload.wikimedia.org/wikipedia/en/a/ad/Snapchat_logo.svg'); }
-.instagram { background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png'); }
-.tiktok    { background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo.svg'); }
-.youtube   { background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/9f/Youtube%28amin%29.png'); }
-.reddit    { background-image: url('https://upload.wikimedia.org/wikipedia/en/8/82/Reddit_logo_and_wordmark.svg'); }
-
-        body {
-            background: linear-gradient(120deg, #1f1f1f, #121212);
-            color: #f0f0f0;
-            font-family: 'Roboto', sans-serif;
-            overflow-x: hidden;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding: 50px 0;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(15px);
-        }
-        header img {
-            width: 150px;
-            animation: pulse 4s infinite alternate;
-        }
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                filter: drop-shadow(0 0 10px #bb00ff);
-            }
-            100% {
-                transform: scale(1.1);
-                filter: drop-shadow(0 0 30px #bb00ff);
-            }
-        }
-        nav ul {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            border-bottom: 2px solid #444;
-            backdrop-filter: blur(10px);
-        }
-        nav ul li {
-            list-style: none;
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: #f0f0f0;
-            text-decoration: none;
-            font-weight: 700;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
-            color: #bb00ff;
-            text-shadow: 0 0 10px #bb00ff;
-        }
-        .section-card {
-            min-height: 200px;
-            padding: 30px 40px;
-            border-radius: 15px;
-            margin-bottom: 40px;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(15px);
-            border-left: 5px solid #bb00ff;
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-            color: #f0f0f0;
-        }
-        .section-card h2 {
-            margin-bottom: 15px;
-            color: #bb00ff;
-            text-shadow: 0 0 10px #bb00ff;
-        }
-        .section-card p {
-            color: #ccc;
-            line-height: 1.6;
-        }
-        .section-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 30px rgba(187, 0, 255, 0.3);
-        }
-        footer {
-            background: rgba(0, 0, 0, 0.8);
-            color: #888;
-            padding: 20px 0;
-            text-align: center;
-            border-top: 1px solid #444;
-            backdrop-filter: blur(10px);
-        }
-        footer a {
-            color: #bb00ff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        footer a:hover {
-            color: #d100ff;
-            text-shadow: 0 0 10px #bb00ff;
-        }
-    </style>
+<!DOCTYPE html><html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Octra | Start</title>
+  <link rel="stylesheet" href="src/styles/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <img src="./assets/octra-logo.png" alt="Project Octra Logo">
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#projekte">Projekte</a></li>
-            <li><a href="#releases">Releases</a></li>
-            <li><a href="#informationen">Informationen</a></li>
-            <li><a href="#stats">Stats</a></li>
-            <li><a href="#server">Server</a></li>
-            <li><a href="#impressum">Impressum</a></li>
-            <li><a href="#credits">Credits</a></li>
-            <li><a href="#wiki">Wiki</a></li>
-            <li><a href="#weitere">Weitere</a></li>
-        </ul>
-    </nav>
-    <main>
-        <div class="section-card" onclick="location.href='#projekte'">
-            <h2>Projekte</h2>
-            <p>Entdecke unsere laufenden und abgeschlossenen Projekte. Klicke hier, um mehr zu erfahren.</p>
-        </div>
-        <div class="section-card" onclick="location.href='#releases'">
-            <h2>Releases</h2>
-            <p>Bleib auf dem Laufenden mit den neuesten Veröffentlichungen und Updates.</p>
-        </div>
-        <div class="section-card" onclick="location.href='#informationen'">
-            <h2>Informationen</h2>
-            <p>Erhalte alle wichtigen Informationen und Einblicke zu unseren Projekten.</p>
-        </div>
-        <div class="social-follow">
-  <a href="https://snapchat.com" class="follow-btn snapchat" target="_blank">Snapchat</a>
-  <a href="https://instagram.com" class="follow-btn instagram" target="_blank">Instagram</a>
-  <a href="https://tiktok.com" class="follow-btn tiktok" target="_blank">TikTok</a>
-  <a href="https://youtube.com" class="follow-btn youtube" target="_blank">YouTube</a>
-  <a href="https://reddit.com" class="follow-btn reddit" target="_blank">Reddit</a>
-</div>
-    </main>
-    <footer>
-        <p>Wer das liest ist Dumm, LOL👌</p>
-        <p>© Project Octra - Alles rund um Octra und mehr. <a href="#">Mehr erfahren</a></p>
-    </footer
-    <section style="text-align:center; margin: 50px 0;">
-    <h2 style="color:#bb00ff; margin-bottom: 20px;">Folge uns</h2>
-    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-        <a href="https://snapchat.com" class="social-btn snapchat" title="Snapchat" target="_blank"></a>
-        <a href="https://www.instagram.com/odolf.hatler1945?igsh=cmExazVjM25hcmM5" class="social-btn instagram" title="Instagram" target="_blank"></a>
-        <a href="https://tiktok.com" class="social-btn tiktok" title="TikTok" target="_blank"></a>
-        <a href="https://youtube.com" class="social-btn youtube" title="YouTube" target="_blank"></a>
-        <a href="https://reddit.com" class="social-btn reddit" title="Reddit" target="_blank"></a>
-    </div>
+  <nav>
+    <ul>
+      <li><a href="#">Start</a></li>
+      <li><a href="#">Projekte</a></li>
+      <li><a href="#">Releases</a></li>
+      <li><a href="#">Informationen</a></li>
+      <li><a href="#">Stats</a></li>
+      <li><a href="#">Server</a></li>
+      <li><a href="#">Wiki</a></li>
+      <li><a href="#">Weitere</a></li>
+    </ul>
+  </nav>  <header class="hero">
+    <h1>Willkommen bei <span class="highlight">Octra</span></h1>
+    <p>Die Zukunft der Bots. Schnell. Modular. Lila.</p>
+  </header>  <main>
+    <section>
+      <h2>Unsere Plattformen</h2>
+      <div class="social-buttons">
+        <a class="social-btn reddit" href="https://reddit.com" target="_blank" aria-label="Reddit"></a>
+        <a class="social-btn tiktok" href="https://tiktok.com" target="_blank" aria-label="TikTok"></a>
+        <a class="social-btn instagram" href="https://instagram.com" target="_blank" aria-label="Instagram"></a>
+        <a class="social-btn youtube" href="https://youtube.com" target="_blank" aria-label="YouTube"></a>
+        <a class="social-btn snapchat" href="https://snapchat.com" target="_blank" aria-label="Snapchat"></a>
+      </div>
+    </section><section class="features">
+  <h2>Funktionen</h2>
+  <ul>
+    <li>Reaktives Design für alle Geräte</li>
+    <li>Cookie-Zustimmung mit Speicherung</li>
+    <li>Futuristisches Neon-Styling</li>
+    <li>Automatische Erkennung von Darkmode (in Vorbereitung)</li>
+    <li>Animierte UI-Elemente mit sanften Übergängen</li>
+  </ul>
 </section>
-</body>
+
+  </main>  <footer>
+    <p>&copy; 2025 Octra – Alle Rechte vorbehalten</p>
+  </footer>  <div id="cookie-banner">
+    <p>Diese Website verwendet Cookies, um dir das beste Erlebnis zu bieten.</p>
+    <button id="accept-cookies">Akzeptieren</button>
+  </div>  <script>
+    const banner = document.getElementById("cookie-banner");
+    const button = document.getElementById("accept-cookies");
+
+    if (localStorage.getItem("cookiesAccepted") === "true") {
+      banner.style.display = "none";
+    }
+
+    button.addEventListener("click", () => {
+      localStorage.setItem("cookiesAccepted", "true");
+      banner.style.display = "none";
+    });
+  </script></body>
 </html>
