@@ -6,10 +6,36 @@
   <title>Octra Projekte</title>
   <link rel="stylesheet" href="src/styles/styles.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <script>
+    // Cookie Banner Funktion
+    function acceptCookies() {
+      localStorage.setItem('cookiesAccepted', 'true');
+      document.getElementById('cookie-banner').classList.remove('show');
+    }
+    window.addEventListener('load', () => {
+      if (localStorage.getItem('cookiesAccepted') === 'true') {
+        document.getElementById('cookie-banner').classList.remove('show');
+      } else {
+        document.getElementById('cookie-banner').classList.add('show');
+      }
+    });
+
+    // Sidebar Toggle
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggleButton = document.querySelector('.sidebar-toggle');
+      const sidebar = document.getElementById('mobileSidebar');
+
+      toggleButton.addEventListener('click', () => {
+        const isOpen = sidebar.classList.toggle('open');
+        sidebar.hidden = !isOpen;
+        toggleButton.setAttribute('aria-expanded', isOpen);
+      });
+    });
+  </script>
 </head>
 <body>
   <!-- Cookie Banner -->
-  <div id="cookie-banner" class="cookie-banner">
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie Hinweis">
     <p>Diese Website verwendet Cookies. Durch die Nutzung akzeptierst du unsere Datenschutzrichtlinien.</p>
     <button onclick="acceptCookies()">Okay</button>
   </div>
@@ -20,7 +46,7 @@
   </header>
 
   <!-- Desktop Navigation -->
-  <nav class="main-nav">
+  <nav class="main-nav" role="navigation" aria-label="Hauptnavigation">
     <a href="#projekte">Projekte</a>
     <a href="#releases">Releases</a>
     <a href="#infos">Informationen</a>
@@ -33,67 +59,62 @@
   </nav>
 
   <!-- Mobile Toggle Button -->
-  <button class="sidebar-toggle" aria-label="Features anzeigen">Features</button>
+  <button class="sidebar-toggle" aria-label="Features anzeigen" aria-expanded="false" aria-controls="mobileSidebar">Features</button>
 
   <!-- Mobile Sidebar -->
-  <aside class="feature-sidebar" id="mobileSidebar">
-      <section><div class="feature-card"></class><h2>Projekte</h2><p>Alle Projekte im Überblick.</p></section>
-      <section><div class="feature-card"></class><h2>Releases</h2><p>Neuste Veröffentlichungen.</p></section>
-      <section><div class="feature-card"></class><h2>Informationen</h2><p>Wissenswertes zu Octra.</p></section>
-      <section><div class="feature-card"></class><h2>Stats</h2><p>Echtzeit-Daten & Analysen.</p></section>
-      <section><div class="feature-card"></class><h2>Server</h2><p>Plattformen & Bots.</p></section>
-      <section><div class="feature-card"></class><h2>Impressum</h2><p>Rechtliche Angaben.</p></section>
-      <section><div class="feature-card"></class><h2>Credits</h2><p>Mitwirkende & Partner.</p></section>
-      <section><div class="feature-card"></class><h2>Wiki</h2><p>Alles über Octra-Funktionen.</p></section>
-      <section><div class="feature-card"></class><h2>Weitere</h2><p>Bonusinhalte und Tools.</p></section>
-    </div>
+  <aside class="feature-sidebar" id="mobileSidebar" aria-label="Feature Sidebar" hidden>
+    <section class="feature-card">
+      <h2 id="projekte">Projekte</h2>
+      <p>Alle Projekte im Überblick.</p>
+    </section>
+    <section class="feature-card">
+      <h2 id="releases">Releases</h2>
+      <p>Neueste Veröffentlichungen.</p>
+    </section>
+    <section class="feature-card">
+      <h2 id="infos">Informationen</h2>
+      <p>Wissenswertes zu Octra.</p>
+    </section>
+    <section class="feature-card">
+      <h2 id="stats">Stats</h2>
+      <p>Echtzeit-Daten & Analysen.</p>
+    </section>
+    <section class="feature-card">
+      <h2 id="server">Server</h2>
+      <p>Plattformen & Bots.</p>
+    </section>
+    <section class="feature-card">
+      <h2 id="impressum">Impressum</h2>
+      <p>Rechtliche Angaben.</p>
+    </section>
+    <section class="feature-card">
+      <h2 id="credits">Credits</h2>
+      <p>Mitwirkende & Partner.</p>
+    </section>
+    <section class="feature-card">
+      <h2 id="wiki">Wiki</h2>
+      <p>Alles über Octra-Funktionen.</p>
+    </section>
+    <section class="feature-card">
+      <h2 id="mehr">Weitere</h2>
+      <p>Zusätzliche Features & Inhalte.</p>
+    </section>
   </aside>
 
+  <!-- Main Content Placeholder -->
+  <main role="main" style="padding: 2rem; flex-grow: 1;">
+    <p>Willkommen bei Octra Projekte! Wähle oben eine Kategorie aus, um mehr zu erfahren.</p>
+  </main>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Octra. Alle Rechte vorbehalten.</p>
-    <div class="social-buttons">
-      <a class="reddit" href="#" title="Reddit"><i class="fab fa-reddit"></i></a>
-      <a class="tiktok" href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
-      <a class="instagram" href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-      <a class="youtube" href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+    <p>&copy; 2025 Octra Projekte. Alle Rechte vorbehalten.</p>
+    <div class="social-buttons" role="navigation" aria-label="Soziale Medien">
+      <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
     </div>
   </footer>
-
-  <!-- Mobile Navigation -->
-  <nav class="mobile-nav">
-    <a href="#projekte"><i class="fas fa-folder"></i></a>
-    <a href="#infos"><i class="fas fa-info-circle"></i></a>
-    <a href="#stats"><i class="fas fa-chart-line"></i></a>
-    <a href="#wiki"><i class="fas fa-book"></i></a>
-    <a href="#mehr"><i class="fas fa-ellipsis-h"></i></a>
-  </nav>
-
-  <!-- Cookie Script -->
-  <script>
-    function acceptCookies() {
-      localStorage.setItem("cookiesAccepted", "true");
-      document.getElementById("cookie-banner").style.display = "none";
-    }
-
-    if (!localStorage.getItem("cookiesAccepted")) {
-      document.getElementById("cookie-banner").style.display = "flex";
-    }
-  </script>
-  <script>
-    const toggleButton = document.querySelector('.sidebar-toggle');
-    const sidebar = document.getElementById('mobileSidebar');
-
-    toggleButton.addEventListener('click', () => {
-      sidebar.classList.toggle('open');
-    });
-
-    document.addEventListener('click', (event) => {
-      if (!sidebar.contains(event.target) && !toggleButton.contains(event.target)) {
-        sidebar.classList.remove('open');
-      }
-    });
-  </script>
 </body>
 </html>
